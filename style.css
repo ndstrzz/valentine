@@ -1,10 +1,10 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif; /* Closest to Catboo */
     text-align: center; /* Center-align text */
     margin: 0; /* Remove default margin */
-    background-color: #C8A2C8;; /* Set background color to light pink */
+    background-color: #C8A2C8; /* Set background color to lilac */
 }
 
 #container {
@@ -16,11 +16,15 @@ body {
 }
 
 #image-container {
-    /* This container will hold the images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 200px; /* Ensures space is reserved for the GIF */
 }
 
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif; /* Cute & playful font */
     font-size: 52px; /* Set font size for the question */
 }
 
@@ -32,9 +36,19 @@ button {
     padding: 10px 20px; /* Set padding for buttons */
     margin: 0 10px; /* Set margin around buttons */
     font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive, sans-serif; /* Apply cute font */
     background-color: #B284BE; /* Set button background color */
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #967BB6; /* Darker lilac shade on hover */
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+#yes-button {
+    transition: all 0.3s ease-in-out;
 }
