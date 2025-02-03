@@ -56,9 +56,6 @@ function selectOption(option) {
     }
 }
 
-// Other functions (flashRainbowColors, moveNoButtonRandomly, displayCat, displayCatHeart, displayLoveMessage)
-
-
 // Function to display the love message when "Yes" is pressed
 function displayLoveMessage() {
     var messageContainer = document.createElement("div");
