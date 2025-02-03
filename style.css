@@ -49,6 +49,18 @@ button:hover {
     transform: scale(1.1); /* Slight zoom-in effect */
 }
 
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+    animation: wiggle 0.3s ease-in-out;
+}
+
 #yes-button {
     transition: all 0.3s ease-in-out;
 }
