@@ -1,3 +1,6 @@
+// Global counter to track the "No" button presses
+let noClickCount = 0;
+
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
@@ -25,29 +28,16 @@ function selectOption(option) {
 
         // Get the "No" button
         var noButton = document.getElementById('no-button');
-        
-        // Get the current text of the "No" button
-        var currentText = noButton.innerText;
 
-        // Find the next message in the array
-        var nextIndex = noMessages.indexOf(currentText) + 1;
-        
-        // If we reached the last message, keep it the same
-        if (nextIndex >= noMessages.length) {
-            nextIndex = noMessages.length - 1;
+        // If noClickCount reaches the last message, keep it at the last message
+        if (noClickCount < noMessages.length - 1) {
+            noButton.innerText = noMessages[noClickCount]; // Update text
+            noClickCount++; // Increase counter
         }
 
-        // Update the "No" button text
-        noButton.innerText = noMessages[nextIndex];
-
-        // Make the "Yes" button wiggle
+        // Make the "Yes" button wiggle non-stop
         var yesButton = document.getElementById('yes-button');
         yesButton.classList.add('wiggle'); // Add the wiggle effect
-
-        // Remove the wiggle effect after 0.3s so it can be triggered again
-        setTimeout(() => {
-            yesButton.classList.remove('wiggle');
-        }, 300);
 
         // Increase font size of "Yes" button
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
@@ -57,7 +47,6 @@ function selectOption(option) {
         alert('Invalid option!');
     }
 }
-
 
 // Function to flash rainbow colors and then execute a callback function
 function flashRainbowColors(callback) {
