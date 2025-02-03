@@ -7,12 +7,35 @@ function selectOption(option) {
             displayCatHeart(); // Display Pak.gif
         });
     } else if (option === 'no') {
-        // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'You sure?'; 
+        // Array of messages for the "No" button
+        var noMessages = [
+            "dont you want more kekehh??",
+            "you sure you dont want more blind box???",
+            "dont wantt lippiesss??????",
+            "please please just press YES IM BEGGING YOU"
+        ];
+
+        // Get the "No" button
+        var noButton = document.getElementById('no-button');
+        
+        // Get the current text of the "No" button
+        var currentText = noButton.innerText;
+
+        // Find the next message in the array
+        var nextIndex = noMessages.indexOf(currentText) + 1;
+        
+        // If we reached the last message, keep it the same
+        if (nextIndex >= noMessages.length) {
+            nextIndex = noMessages.length - 1;
+        }
+
+        // Update the "No" button text
+        noButton.innerText = noMessages[nextIndex];
+
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by * 2px
+        var newSize = parseFloat(currentFontSize) * 1.5; // Increase font size by *1.5x
         yesButton.style.fontSize = newSize + 'px';
     } else {
         alert('Invalid option!');
