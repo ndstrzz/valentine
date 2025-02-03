@@ -58,8 +58,9 @@ button:hover {
 }
 
 .wiggle {
-    animation: wiggle 0.3s ease-in-out;
+    animation: wiggle 0.3s infinite ease-in-out;
 }
+
 
 #yes-button {
     transition: all 0.3s ease-in-out;
