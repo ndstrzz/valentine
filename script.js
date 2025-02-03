@@ -8,6 +8,7 @@ function selectOption(option) {
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display Pak.gif
+            displayLoveMessage(); // Show the cute message!
         });
     } else if (option === 'no') {
         // Array of messages for the "No" button
@@ -46,13 +47,26 @@ function selectOption(option) {
         var yesButton = document.getElementById('yes-button');
         yesButton.classList.add('wiggle'); // Add the wiggle effect
 
-        // Increase font size of "Yes" button
+        // Make the "Yes" button grow **FASTER**
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 1.2; // Increase font size by *1.2x
+        var newSize = parseFloat(currentFontSize) * 1.5; // Increased from 1.2x to **1.5x**
         yesButton.style.fontSize = newSize + 'px';
     } else {
         alert('Invalid option!');
     }
+}
+
+// Function to display the love message when "Yes" is pressed
+function displayLoveMessage() {
+    var messageContainer = document.createElement("div");
+    messageContainer.id = "love-message";
+    messageContainer.innerHTML = `
+        <p id="love-text">Hehehe I know no matter how stubborn my little baby is, 
+        she will still press YES at the end of the dayyy. 
+        MWAHH MWAHHH I LOVE YOU SOOOOOO MUCHHHHHHHHHHH. <br><br> 
+        Stay tuned for 14 February okiiii!!!!! 💖💖💖</p>
+    `;
+    document.getElementById("container").appendChild(messageContainer);
 }
 
 // Function to randomly move the "No" button
@@ -118,7 +132,7 @@ function displayCatHeart() {
     };
 
     catHeartImage.onerror = function() {
-        console.error('Error loading cat-heart.gif - Check if the file exists in the correct directory!');
+        console.error('Error loading cat-heart.gif - Check if the file exists in the correct directory!");
     };
 }
 
