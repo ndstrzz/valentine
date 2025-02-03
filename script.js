@@ -23,14 +23,18 @@ function selectOption(option) {
             "do you not love me at allllll :(  ",
             "hmphh",
             "hmphhh",
-            "ihhh stop testingggggg meeee"
+            "ihhh stop testingggggg meeee",
+            "DONTT TEST MEEE, ILL MAKE SURE TO PUNISH IF YOU CONTINUE",
+            "JUST SAY YESS",
+            "SAYYY YESSSSSSSSSS",
+            "MAMIIIII"
         ];
 
         // Get the "No" button
         var noButton = document.getElementById('no-button');
 
-        // If noClickCount reaches the last message, keep it at the last message
-        if (noClickCount < noMessages.length - 1) {
+        // Ensure the text continues changing until "MAMIIIII"
+        if (noClickCount < noMessages.length) {
             noButton.innerText = noMessages[noClickCount]; // Update text
             noClickCount++; // Increase counter
         }
