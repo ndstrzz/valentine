@@ -8,7 +8,6 @@ function selectOption(option) {
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display Pak.gif
-            displayLoveMessage(); // Show the cute message!
         });
     } else if (option === 'no') {
         // Array of messages for the "No" button
@@ -54,19 +53,6 @@ function selectOption(option) {
     } else {
         alert('Invalid option!');
     }
-}
-
-// Function to display the love message when "Yes" is pressed
-function displayLoveMessage() {
-    var messageContainer = document.createElement("div");
-    messageContainer.id = "love-message";
-    messageContainer.innerHTML = `
-        <p id="love-text">Hehehe I know no matter how stubborn my little baby is, 
-        she will still press YES at the end of the dayyy. 
-        MWAHH MWAHHH I LOVE YOU SOOOOOO MUCHHHHHHHHHHH. <br><br> 
-        Stay tuned for 14 February okiiii!!!!! 💖💖💖</p>
-    `;
-    document.getElementById("container").appendChild(messageContainer);
 }
 
 // Function to randomly move the "No" button
@@ -132,7 +118,7 @@ function displayCatHeart() {
     };
 
     catHeartImage.onerror = function() {
-        console.error('Error loading cat-heart.gif - Check if the file exists in the correct directory!");
+        console.error('Error loading cat-heart.gif - Check if the file exists in the correct directory!');
     };
 }
 
