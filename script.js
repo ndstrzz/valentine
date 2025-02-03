@@ -35,6 +35,9 @@ function selectOption(option) {
             noClickCount++; // Increase counter
         }
 
+        // Move the "No" button to a random position
+        moveNoButtonRandomly();
+
         // Make the "Yes" button wiggle non-stop
         var yesButton = document.getElementById('yes-button');
         yesButton.classList.add('wiggle'); // Add the wiggle effect
@@ -46,6 +49,20 @@ function selectOption(option) {
     } else {
         alert('Invalid option!');
     }
+}
+
+// Function to randomly move the "No" button
+function moveNoButtonRandomly() {
+    var noButton = document.getElementById('no-button');
+    var maxWidth = window.innerWidth - noButton.offsetWidth;
+    var maxHeight = window.innerHeight - noButton.offsetHeight;
+
+    var randomX = Math.floor(Math.random() * maxWidth);
+    var randomY = Math.floor(Math.random() * maxHeight);
+
+    noButton.style.position = "absolute";
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
 }
 
 // Function to flash rainbow colors and then execute a callback function
