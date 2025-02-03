@@ -32,15 +32,24 @@ function selectOption(option) {
         // Update the "No" button text
         noButton.innerText = noMessages[nextIndex];
 
-        // Increase font size of "Yes" button
+        // Make the "Yes" button wiggle
         var yesButton = document.getElementById('yes-button');
+        yesButton.classList.add('wiggle'); // Add the wiggle effect
+
+        // Remove the wiggle effect after 0.3s so it can be triggered again
+        setTimeout(() => {
+            yesButton.classList.remove('wiggle');
+        }, 300);
+
+        // Increase font size of "Yes" button
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 1.5; // Increase font size by *1.5x
+        var newSize = parseFloat(currentFontSize) * 1.2; // Increase font size by *1.2x
         yesButton.style.fontSize = newSize + 'px';
     } else {
         alert('Invalid option!');
     }
 }
+
 
 // Function to flash rainbow colors and then execute a callback function
 function flashRainbowColors(callback) {
