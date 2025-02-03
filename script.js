@@ -12,7 +12,15 @@ function selectOption(option) {
             "dont you want more kekehh??",
             "you sure you dont want more blind box???",
             "dont wantt lippiesss??????",
-            "please please just press YES IM BEGGING YOU"
+            "please please just press YES IM BEGGING YOU",
+            "do you not love lilacc :( ",
+            "do you not love daisyy :(  ",
+            "do you not love fluffy :( ",
+            "do you not love rockyy :(  ",
+            "do you not love me at allllll :(  ",
+            "hmphh",
+            "hmphhh",
+            "ihhh stop testingggggg meeee"
         ];
 
         // Get the "No" button
